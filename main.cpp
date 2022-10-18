@@ -3,7 +3,11 @@
 
 void display();
 void reshape(int, int);
+<<<<<<< HEAD
 
+=======
+void timer(int);
+>>>>>>> 3f17414 (Putri Elisya dan Wd. Azzahra Astiani Hasiba)
 
 void init()
 {
@@ -23,7 +27,11 @@ int main(int argc, char**argv)
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
+<<<<<<< HEAD
 
+=======
+    glutTimerFunc(0, timer, 0);
+>>>>>>> 3f17414 (Putri Elisya dan Wd. Azzahra Astiani Hasiba)
     init();
 
     glutMainLoop();
@@ -33,6 +41,32 @@ int main(int argc, char**argv)
 float anglex = 21.0, angley = -21.0;
 int   zoom = -10;
 
+<<<<<<< HEAD
+=======
+void keyboard(unsigned char key, int x, int y)
+{
+    if (key == 27)
+        exit(0);
+
+    if (key == 'w' || key == 'W')
+        anglex += 3;
+
+    if (key == 's' || key == 'S')
+        anglex -= 3;
+
+    if (key == 'a' || key == 'A')
+        angley -= 3;
+
+    if (key == 'd' || key == 'D')
+        angley += 3;
+
+    if (key == 'q' || key == 'Q')
+        zoom -= 2;
+
+    if (key == 'e' || key == 'E')
+        zoom += 2;
+}
+>>>>>>> 3f17414 (Putri Elisya dan Wd. Azzahra Astiani Hasiba)
 
 void display()
 {
@@ -146,7 +180,11 @@ void display()
 {
 
 }
+<<<<<<< HEAD
 
+=======
+    glutKeyboardFunc(keyboard);
+>>>>>>> 3f17414 (Putri Elisya dan Wd. Azzahra Astiani Hasiba)
     glutSwapBuffers();
 }
 
@@ -158,3 +196,18 @@ void reshape(int w, int h)
     gluPerspective(60, 1, 2.0, 50.0);
     glMatrixMode(GL_MODELVIEW);
 }
+<<<<<<< HEAD
+=======
+
+void timer(int)
+{
+    glutPostRedisplay();
+    glutTimerFunc(1000/30, timer, 0);
+
+    if (anglex > 360.0)
+        anglex = anglex-360.0;
+
+    if (angley > 360.0)
+        angley = angley-360.0;
+}
+>>>>>>> 3f17414 (Putri Elisya dan Wd. Azzahra Astiani Hasiba)
