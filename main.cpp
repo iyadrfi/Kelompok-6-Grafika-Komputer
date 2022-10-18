@@ -3,7 +3,6 @@
 
 void display();
 void reshape(int, int);
-void timer(int);
 
 void init()
 {
@@ -23,7 +22,6 @@ int main(int argc, char**argv)
 
     glutDisplayFunc(display);
     glutReshapeFunc(reshape);
-    glutTimerFunc(0, timer, 0);
     init();
 
     glutMainLoop();
@@ -108,16 +106,4 @@ void reshape(int w, int h)
     glLoadIdentity();
     gluPerspective(60, 1, 2.0, 50.0);
     glMatrixMode(GL_MODELVIEW);
-}
-
-void timer(int)
-{
-    glutPostRedisplay();
-    glutTimerFunc(1000/30, timer, 0);
-
-    if (anglex > 360.0)
-        anglex = anglex-360.0;
-
-    if (angley > 360.0)
-        angley = angley-360.0;
 }
