@@ -17,7 +17,7 @@ int main(int argc, char**argv)
     glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE | GLUT_DEPTH);
 
     glutInitWindowPosition(200, 80);
-    glutInitWindowSize(800, 800);
+    glutInitWindowSize(1000, 1000);
 
     glutCreateWindow("SPEAKER - KELOMPOK 6");
 
@@ -39,7 +39,7 @@ void keyboard(unsigned char key, int x, int y)
         exit(0);
 
     if (key == 'w' || key == 'W')
-        anglex += 3;
+        anglex +=10 ;
 
     if (key == 's' || key == 'S')
         anglex -= 3;
