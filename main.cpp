@@ -7,7 +7,7 @@ void timer(int);
 
 void init()
 {
-    glClearColor(0.1, 0.1, 0.1, 0.0);
+    glClearColor(0.75, 0.75, 0.75, 0.75);
     glEnable(GL_DEPTH_TEST);
 }
 
@@ -62,7 +62,7 @@ void display()
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     glLoadIdentity();
 
-    glTranslatef(0.0, 0.0, zoom);
+    glTranslatef(0, 3.5, zoom);
     glRotatef(anglex, 1.0, 0.0, 0.0);
     glRotatef(angley, 0.0, 1.0, 0.0);
 
@@ -70,7 +70,7 @@ void display()
     glBegin(GL_QUADS);
 
     // Bagian Atas
-    glColor3f ( 0.0, 0.0, 0.0);
+    glColor3ub (0.0, 0.0, 0.0);
     glVertex3f(-1.0, 2.0, 1.075);
     glVertex3f(-1.0, 1.9, 1.075);
     glVertex3f( 1.0, 1.9, 1.075);
@@ -178,7 +178,7 @@ void reshape(int w, int h)
     glViewport(0,0,(GLsizei)w,(GLsizei)h);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    gluPerspective(60, 1, 2.0, 50.0);
+    gluPerspective(60, 1, 2.0, 25.0);
     glMatrixMode(GL_MODELVIEW);
 }
 
@@ -193,3 +193,5 @@ void timer(int)
     if (angley > 360.0)
         angley = angley-360.0;
 }
+
+//branch dua
